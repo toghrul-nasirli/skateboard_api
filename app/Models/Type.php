@@ -12,4 +12,9 @@ class Type extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function skateboards()
+    {
+        return $this->hasMany(Skateboard::class);
+    }
 }

@@ -16,8 +16,13 @@ class Skateboard extends Model
         'custom_print_price',
     ];
 
+    public function type()
+    {
+        return $this->belongsTo(Type::class);
+    }
+
     public function colors()
     {
-        return $this->belongsToMany(Color::class);
+        return $this->belongsToMany(Color::class, 'color_skateboards');
     }
 }
