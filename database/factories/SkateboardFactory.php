@@ -15,7 +15,7 @@ class SkateboardFactory extends Factory
             'type_id' => 1,
             'name' => $this->faker->name,
             'price' => $this->faker->randomDigitNotNull,
-            'custom_print_price' => $this->faker->randomDigitNotNull,
+            'custom_print_price' => $this->faker->randomDigit,
         ];
     }
 }

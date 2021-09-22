@@ -8,7 +8,7 @@ class CreateColorSkateboardPivotTable extends Migration
 {
     public function up()
     {
-        Schema::create('color_skateboard_pivot', function (Blueprint $table) {
+        Schema::create('color_skateboards', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('color_id');
             $table->unsignedBigInteger('skateboard_id');
@@ -18,6 +18,6 @@ class CreateColorSkateboardPivotTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('color_skateboard_pivot');
+        Schema::dropIfExists('color_skateboards');
     }
 }
