@@ -12,8 +12,8 @@ class CreateSkateboardsTable extends Migration
             $table->id();
             $table->foreignId('type_id')->constrained();
             $table->string('name');
-            $table->integer('price');
-            $table->integer('custom_print_price');
+            $table->unsignedInteger('price');
+            $table->unsignedInteger('custom_print_price');
             $table->timestamps();
         });
     }
