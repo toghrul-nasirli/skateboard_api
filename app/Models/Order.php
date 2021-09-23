@@ -18,4 +18,14 @@ class Order extends Model
         'photo',
         'address',
     ];
+
+    public function product()
+    {
+        return $this->belongsTo(Skateboard::class);
+    }
+
+    public function color()
+    {
+        return $this->belongsTo(Color::class);
+    }
 }

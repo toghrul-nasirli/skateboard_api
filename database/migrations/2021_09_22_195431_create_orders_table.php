@@ -10,8 +10,8 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('product_id');
-            $table->unsignedBigInteger('color_id');
+            $table->foreignId('product_id')->constrained('skateboards');
+            $table->foreignId('color_id')->constrained();
             $table->unsignedTinyInteger('amount');
             $table->string('custom_print_photo')->nullable();
             $table->string('email')->nullable();
