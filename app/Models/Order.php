@@ -27,5 +27,5 @@ class Order extends Model
     public function color()
     {
         return $this->belongsTo(Color::class);
-    }
+    }   
 }
