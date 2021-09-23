@@ -9,7 +9,7 @@ class DeliveryResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'order' => new OrderResource($this->order),
+            'order' => new OrderResource($this->whenLoaded('order')),
             'delivery_date' => $this->delivery_date,
             'preparation_date'=> $this->preparation_date,
         ];

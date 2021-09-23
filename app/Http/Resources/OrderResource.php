@@ -9,8 +9,8 @@ class OrderResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'product' => new SkateboardResource($this->product),
-            'color' => new ColorResource($this->color),
+            'product' => new SkateboardResource($this->whenLoaded('product')),
+            'color' => new ColorResource($this->whenLoaded('color')),
             'amount' => $this->amount,
             'custom_print_photo' => asset('uploads/orders/' . $this->custom_print_photo),
             'email' => $this->email,
