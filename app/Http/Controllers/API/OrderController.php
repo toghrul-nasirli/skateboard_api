@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOrderRequest;
+use App\Http\Requests\UpdateDeliveryRequest;
+use App\Http\Resources\DeliveryResource;
 use App\Http\Resources\OrderResource;
+use App\Models\Delivery;
 use App\Models\Order;
 use App\Traits\ApiResponser;
 
@@ -30,5 +33,17 @@ class OrderController extends Controller
         $order = Order::create($data);
 
         return $this->success(new OrderResource($order), 'Sifariş qeydə alındı!');
+    }
+
+    public function delivery(Order $order, UpdateDeliveryRequest $request)
+    {
+        Delivery::firstWhere('order_id', $order->id)->update([
+            'delivery_date' => $request->delivery_date,
+            'preparation_date' => $request->preparation_date,
+        ]);
+
+        $delivery = Delivery::with('order')->firstWhere('order_id', $order->id);
+    
+        return $this->success(new DeliveryResource($delivery), 'Tarix təyin edildi!');
     }
 }
