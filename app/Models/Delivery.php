@@ -10,6 +10,7 @@ class Delivery extends Model
     use HasFactory;
 
     protected $fillable = [
+        'order_id',
         'delivery_date',
         'preparation_date',
     ];
