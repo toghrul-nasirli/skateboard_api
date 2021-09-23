@@ -23,7 +23,7 @@ class StoreOrderRequest extends FormRequest
             'address' => ['required', 'string'],
         ];
     }
-    
+
     public function messages()
     {
         return [
@@ -35,7 +35,7 @@ class StoreOrderRequest extends FormRequest
             'max' => ':attribute :max simvoldan böyük olmamalıdır.',
             'email' => ':attribute etibarlı bir e-poçt ünvanı olmalıdır.',
             'string' => ':attribute simvollardan ibarət olmalıdır.',
-            'required_if' => ':other bölməsinin dəyəri :value olduğu halda :attribute bölməsi boş buraxıla bilməz.',
+            'required_without' => ':other bölməsinin dəyəri :value olduğu halda :attribute bölməsi boş buraxıla bilməz.',
         ];
     }
 
