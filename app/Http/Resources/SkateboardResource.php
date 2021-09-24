@@ -10,8 +10,8 @@ class SkateboardResource extends JsonResource
     {
         return [
             'name' => $this->name,
-            'type' => new TypeResource($this->whenLoaded('type')),
-            'colors' => ColorResource::collection($this->whenLoaded('colors')),
+            'type' => new TypeResource($this->type),
+            'colors' => ColorResource::collection($this->colors),
             'price' => $this->price,
             'custom_print_price' => $this->custom_print_price,
         ];
